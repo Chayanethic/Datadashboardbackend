@@ -35,7 +35,7 @@ app.post("/deleteUser", async (req, res) => {
    await Users.deleteOne({
       _id: userid
     })
-    res.send({status:"ok", data: `deleted ${_id}`})
+    res.send({status:"ok", data: `deleted `})
   }
   catch(error) {
     console.log(error)
