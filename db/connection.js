@@ -1,4 +1,8 @@
+require("dotenv").config();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://chayanneogi12:SHnoJIK9MlzIx8Di@cluster0.ee5hb6p.mongodb.net/hostelfooddata');
+const dbUrl = process.env.DATABASE;
+mongoose.connect(dbUrl).then(() => {
+  console.log("Database connected")
+})
 
 
