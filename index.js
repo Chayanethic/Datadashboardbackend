@@ -32,10 +32,10 @@ app.post("/deleteUser", async (req, res) => {
  
   const { userid } = req.body;
   try {
-    Users.deleteOne({
+   await Users.deleteOne({
       _id: userid
-    }).then(
-    res.send({status:"ok", data: "deleted"}))
+    })
+    res.send({status:"ok", data: "deleted"})
   }
   catch(error) {
     console.log(error)
