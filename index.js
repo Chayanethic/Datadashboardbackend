@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require("dotenv").config();
 
 app.use(express.json());
 const cors = require('cors');
@@ -7,6 +8,7 @@ app.use(cors());
 
 require('./db/connection');
 const Users = require('./models/User');
+
 
 
 app.post("/", async (req, resp) => {
@@ -39,7 +41,8 @@ app.post("/deleteUser", async (req, res) => {
     console.log(error)
   }
 })
-const Port = 4000;
-app.listen(Port, () => {
-  console.log("port run",Port)
+
+const PORT = process.env.PORT || 4000
+app.listen(PORT, () => {
+  console.log("port run",PORT)
 });
